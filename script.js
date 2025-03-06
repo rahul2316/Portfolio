@@ -4,6 +4,10 @@ document.querySelectorAll("nav a").forEach(link => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute("href"));
         target.scrollIntoView({ behavior: "smooth" });
+
+        // Close the menu after clicking a link
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.remove("active");
     });
 });
 
@@ -25,6 +29,8 @@ sections.forEach(section => {
     section.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
     observer.observe(section);
 });
+
+// Typing Effect
 document.addEventListener("DOMContentLoaded", function () {
     const text = "Hi, I'm Rahul Chandwani";
     let index = 0;
@@ -42,3 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
     type();
 });
 
+// Toggle Menu
+document.getElementById("menu-toggle").addEventListener("click", function () {
+    const navMenu = document.getElementById("nav-menu");
+    navMenu.classList.toggle("active");
+});
