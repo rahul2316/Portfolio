@@ -12,8 +12,8 @@ body {
     background-color: #121212;
     color: white;
     scroll-behavior: smooth;
-    line-height: 1.8; /* Increased spacing */
-    font-size: 18px; /* Increased base font size */
+    line-height: 1.8;
+    font-size: 18px;
 }
 
 /* Navbar */
@@ -21,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* Increased padding */
+    padding: 20px 40px;
     background: #1e1e1e;
     position: fixed;
     width: 100%;
@@ -30,24 +30,47 @@ header {
     flex-wrap: wrap;
 }
 
+#menu-toggle {
+    display: block; /* Always show the menu button */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#nav-menu {
+    display: none; /* Hide nav links by default */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nav-menu.active {
+    display: flex; /* Show nav links when menu is active */
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
 }
 
 nav li {
-    display: inline;
+    text-align: center;
 }
 
 nav a {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    font-size: 20px; /* Increased font size */
+    font-size: 20px;
     padding: 12px;
     transition: 0.3s;
+    display: block;
+    width: 100%;
 }
 
 nav a:hover {
@@ -74,11 +97,11 @@ nav a:hover {
 /* Buttons */
 .btn {
     background: linear-gradient(45deg, #008080, #005f5f);
-    padding: 14px 24px; /* Increased padding */
+    padding: 14px 24px;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 1.2rem; /* Increased font size */
+    font-size: 1.2rem;
     border-radius: 8px;
     transition: 0.3s;
     display: inline-block;
@@ -91,7 +114,7 @@ nav a:hover {
 
 /* Sections */
 section {
-    padding: 100px 30px; /* Increased spacing */
+    padding: 100px 30px;
     text-align: center;
 }
 
@@ -112,7 +135,7 @@ section {
     background: #333;
     padding: 25px;
     border-radius: 10px;
-    width: 350px; /* Increased width */
+    width: 350px;
     transition: 0.3s;
     text-align: left;
     font-size: 1.2rem;
@@ -178,43 +201,4 @@ footer {
     padding: 30px;
     background: #1e1e1e;
     font-size: 1.2rem;
-}
-
-/* Responsive Fix for Small Screens */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        gap: 12px;
-    }
-
-    nav a {
-        display: block;
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    #hero {
-        padding: 140px 20px;
-    }
-
-    #typing-text {
-        font-size: 2.5rem;
-    }
-
-    .project-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project {
-        width: 90%;
-    }
 }
